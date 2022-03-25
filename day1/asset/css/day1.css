@@ -1,0 +1,123 @@
+/* Reset CSS */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-family: sans-serif;
+    background-image: linear-gradient(to right, #4daf54, #3d8880);
+    
+}
+
+.card{
+    margin: 120px auto;
+    padding: 40px 20px;
+    width: 320px;
+    height: 400px;
+    background-color: #272d40;
+    border-radius: 15px;
+    color: white;
+    position: relative;
+    
+}
+
+.like, .cart{
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.like{
+    float: left;
+    position: absolute;
+}
+
+.cart{
+    float:right;
+}
+
+.card__img{
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.card__title{
+    color: #4daf54;
+    text-align: center;
+}
+
+.card__price{
+    text-align: center;
+    font-weight: 600;
+    font-size: 26px;
+}
+
+.card__size, .card__color{
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.card__size h3, .card__color h3{
+    margin-right: 12px;
+    font-weight: unset;
+}
+
+.card__size span{
+    padding: 2px 10px;
+    margin: 0 5px;
+    background-color: #dadada;
+    border-radius: 5px;
+    color: #272d40;
+    cursor: pointer;
+}
+
+.card__color span{
+    margin: 0 5px
+}
+
+.card__color .green{
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background-color: green;
+}
+
+.card__color .red{
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background-color: red;
+}
+
+.card__color .black{
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background-color: black;
+}
+
+.card__action button{
+    padding: 10px 20px;
+    margin-right: 7px;
+    background-color: #4daf54;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.card__size, .card__color, .card__action{
+    visibility: hidden;
+}
+
+.card__size:hover, .card__color:hover, .card__action:hover{
+    visibility: visible;
+}
+
+.card__img:hover{
+    transition: 0.5s;
+}
