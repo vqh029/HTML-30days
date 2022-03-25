@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
 /* Reset CSS */
 *{
     padding: 0;
@@ -6,9 +8,9 @@
 }
 
 html{
-    font-family: sans-serif;
+    font-family: 'Poppins', sans-serif;
     background-image: linear-gradient(to right, #4daf54, #3d8880);
-    
+    overflow: hidden;
 }
 
 .card{
@@ -38,26 +40,65 @@ html{
 }
 
 .card__img{
-    width: 100%;
+    transition: 0.5s;
+}
+
+img{
     object-fit: cover;
     object-position: center;
+}
+
+.card:hover .card__img{
+    /* transition: 0.5s; */
+    transform: translateY(-90px) rotateZ(-20deg);
 }
 
 .card__title{
     color: #4daf54;
     text-align: center;
+    transition: 0.5s;
+}
+
+.card:hover .card__title{
+    transform: translate(-40px, -72px);
 }
 
 .card__price{
     text-align: center;
     font-weight: 600;
     font-size: 26px;
+    transition: 0.5s;
+}
+
+.card:hover .card__price{
+    transform: translate(-112px, -72px);
+}
+
+.card__size, .card__color, .card__action{
+    visibility: hidden;
+    transition: 0.5s;
+    opacity: 0;
+}
+
+.card:hover .card__size, .card:hover .card__color,
+.card:hover .card__action{
+    transition-delay: 0.2s;
+    opacity: 1;
+    visibility: visible;
 }
 
 .card__size, .card__color{
     display: flex;
     align-items: center;
     margin-bottom: 15px;
+}
+
+.card__size{
+    margin-top: 100px;
+}
+
+.card:hover .card__size{
+    margin-top: -30px;
 }
 
 .card__size h3, .card__color h3{
@@ -108,16 +149,9 @@ html{
     color: white;
     font-weight: 600;
     cursor: pointer;
+    transition: 0.25s;
 }
 
-.card__size, .card__color, .card__action{
-    visibility: hidden;
-}
-
-.card__size:hover, .card__color:hover, .card__action:hover{
-    visibility: visible;
-}
-
-.card__img:hover{
-    transition: 0.5s;
+.card__action button:hover {
+	transform: scale(0.9);
 }
