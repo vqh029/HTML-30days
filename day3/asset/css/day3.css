@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+
+:root{
+    --pink-color: #e26e70;
+}
+
+/* reset CSS */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-image: linear-gradient(45deg, rgb(65, 88, 208) 0%, rgb(200, 80, 192) 50%, rgb(255, 204, 112) 100% );
+    height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+    font-size: 18px;
+}
+
+.open-modal-btn{
+    padding: 20px 40px;
+    /* margin: 0 auto; */
+    position: absolute;
+    top: 50%;
+    left: 45%;
+    border-radius: 6px;
+    border: none;
+    font-size: 20px;
+}
+
+.open-modal-btn:hover{
+    opacity: 0.8;
+    transition: 0.25s;
+    cursor: pointer;
+}
+
+.modal{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6);
+    
+}
+
+.modal__inner{
+    width: 450px;
+    height: 220px;
+    background-color: white;
+    position: relative;
+    border-radius: 5px;
+    margin: 0 auto;
+    top: 30%;
+    overflow: hidden;
+    animation: modalShow 0.3s linear;
+}
+
+.modal__header{
+    background-color: var(--pink-color);
+    font-size: 18px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    color: white;
+}
+
+.modal__header p{
+    /* width: fit-content; */
+    display: inline-block;
+}
+
+.modal__header i{
+    font-size: x-large;
+    float: right;
+    cursor: pointer;
+}
+
+.modal__body{
+    padding: 15px;
+}
+
+.modal__body h3{
+    margin-bottom: 10px;
+}
+
+.modal__footer{
+    padding: 15px;
+}
+
+.modal__footer .close-modal-btn{
+    float: right;
+    padding: 10px 20px;
+    color: white;
+    background-color: var(--pink-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.hide{
+    display: none;
+}
+
+
+@keyframes modalShow {
+    from{
+        top: -350px;
+        opacity: 0;
+    }
+
+    to{
+        top: 30%;
+        opacity: 1s;
+    }
+}
