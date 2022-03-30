@@ -10,6 +10,7 @@ body{
     height: 100vh;
     display: flex;
     background-color: #ecf0f1;
+    overflow: hidden;
 }
 
 .control{
@@ -38,7 +39,7 @@ body{
 }
 
 button.success{
-    background-color: green;
+    background-color: rgb(50, 196, 50);
 }
 
 button.warning{
@@ -49,7 +50,7 @@ button.error{
     background-color: red;
 }
 
-#toast{
+#toasts{
     position: fixed;
     top: 10px;
     right: 10px;
@@ -58,38 +59,99 @@ button.error{
 }
 
 .toast{
+    position: relative;
+    border-radius: 6px;
+    color: #fff;
+    font-size: 20px;
     padding: 20px;
-    border-radius: 4px;
+    text-align: center;
     overflow: hidden;
     margin-bottom: 10px;
-    display: flex;
-    align-items: center;
-    border-left: 6px solid;
+    animation: show_noti 1s ease forwards;
 }
 
-.toast .success{
-    background-color: rgba(0, 128, 0, 0.4);
-    border-color: rgb(0, 128, 0);
+.toast>i{
+    font-size: 25px;
+    margin-right: 8px;
 }
 
-.toast .warning{
-    background-color: rgba(255, 165, 0, 0.4);
-    border-color: rgb(255, 165, 0);
+.toast .countdown{
+    position: absolute;
+    bottom: 0;
+    left: -6px;
+    height: 2px;
+    width: 100%;
+    animation: countdown 4s ease forwards;
+    
 }
 
-.toast .error{
-    background-color: rgba(255, 0, 0, 0.4);
-    border-color: rgb(255, 0, 0);
+.toast.success{
+    background-color: rgba(50, 196, 50, 0.6);
+    border-left: 6px solid green;
 }
 
-.toast i{
-    font-size: 28px;
-    color: white;
+.toast.warning{
+    background-color: rgba(253, 175, 29, 0.6);
+    border-left: 6px solid orange;
 }
 
-.toast .msg{
-    padding: 0 20px;
-    font-size: 16px;
-    color: white;
+.toast.error{
+    background-color: rgba(255, 37, 37, 0.6);
+    border-left: 6px solid red;
 }
 
+.toast.success .countdown{
+    background-color: green;
+}
+
+.toast.warning .countdown{
+    background-color: orange;
+}
+
+.toast.error .countdown{
+    background-color: red;
+}
+
+
+@keyframes countdown {
+    0%{
+        width: 100%;
+    }
+
+    100%{
+        width: 0%;
+    }
+}
+
+@keyframes show_noti {
+    0% {
+      transform: translateX(100%);
+    }
+    40% {
+      transform: translateX(-10%);
+    }
+    80% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-10px);
+    }
+  }
+
+@keyframes hide_noti{
+    0%{
+        transform: translateX(-10px);
+    }
+
+    40%{
+        transform: translateX(0%);
+    }
+
+    80%{
+        transform: translateX(-10%);
+    }
+
+    100%{
+        transform: translateX(120%);
+    }
+}
